@@ -9,20 +9,16 @@ import AddBookComp from "./components/addBookComp";
 import { gql, useQuery, useMutation } from '@apollo/client';
 
 const GET_BOOKS = gql`
-    query GetBooks($filter: String, $page: Int, $limit: Int) {
-        getBooks(filter: $filter, page: $page, limit: $limit) {
+    query GetBooks($page: Int, $limit: Int, $filter: BookFilter) {
+        getBooks(page: $page, limit: $limit, filter: $filter) {
             books {
-                id
-                title
-                publishedDate
                 description
+                id
+                publishedDate
+                title
                 authors {
-                    id
                     name
-                }
-                reviewsAndRating {
-                    review
-                    rating
+                    id
                 }
             }
             currentPage
