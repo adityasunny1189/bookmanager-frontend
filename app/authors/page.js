@@ -90,7 +90,6 @@ export default function AuthorPage() {
     try {
       if (editingAuthor) {
         console.log("Editing Author: ", editingAuthor);
-        // Update author
         await updateAuthor({
           variables: {
             id: editingAuthor.id,
@@ -102,7 +101,6 @@ export default function AuthorPage() {
         });
         message.success('Author updated successfully');
       } else {
-        // Create author
         await createAuthor({
           variables: {
             name,
