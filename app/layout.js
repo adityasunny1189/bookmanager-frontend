@@ -6,7 +6,7 @@ import NavbarComp from "./NavComp";
 import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
 
 const client = new ApolloClient({
-    uri: 'http://localhost:3005/graphql',
+    uri: 'https://bookmanager-backend-production.up.railway.app/graphql',
     cache: new InMemoryCache(),
 });
 
